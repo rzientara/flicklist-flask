@@ -103,6 +103,11 @@ def add_movie():
     sentence = new_movie_element + " has been added to your Watchlist!"
     content = page_header + "<p>" + sentence + "</p>" + page_footer
 
+    if new_movie == "":
+        error = "Please specify the name of the movie you want to add"
+
+        return redirect("/?error=" + error)
+
     return content
 
 
