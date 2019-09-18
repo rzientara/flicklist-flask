@@ -12,6 +12,7 @@
     <input type="submit" value="Add It"/>
 </form>
 
+{% if watchlist %}
 <form action="/crossoff" method="post">
     <label>
         I want to cross off
@@ -30,10 +31,12 @@
 <ul>
     {% for movie in watchlist: %}
         <li>{{ movie }}</li>
-    {% endfor %}
+   {% endfor %}
 </ul>
+{% endif %}
 
 {% if error %}
   <p class='error'>{{ error }}</p>
 {% endif %}
+
 {% endblock %}
