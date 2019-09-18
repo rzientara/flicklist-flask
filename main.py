@@ -108,6 +108,11 @@ def add_movie():
 
         return redirect("/?error=" + error)
 
+    if new_movie in terrible_movies:
+        error = "Trust me, you don't want to add '{0}' to your Watchlist.".format(new_movie)
+
+        return redirect("/?error=" + error)
+
     return content
 
 
